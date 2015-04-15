@@ -4,6 +4,4 @@ IF NOT "%VS90COMNTOOLS%" == "" (
 ) ELSE IF NOT "%VS120COMNTOOLS%" == "" (
 	CALL "%VS120COMNTOOLS%vsvars32.bat"
 )
-ECHO %JAVA_HOME%
-ECHO %OUTPUT_DIR%
 nmake make_win32.mak
