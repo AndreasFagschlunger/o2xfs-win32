@@ -61,7 +61,7 @@ if [ "$TRAVIS_BRANCH" == "master" ]; then
   increment_patch_level
 fi
 
-./gradlew build
+./gradlew build -x test
 
 if [ "$TRAVIS_BRANCH" == "master" ]; then
   git_config
