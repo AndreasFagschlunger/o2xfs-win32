@@ -34,7 +34,7 @@ import java.nio.charset.StandardCharsets;
  *
  * @author Andreas Fagschlunger
  */
-public class ZSTR extends CharArray implements ASCII, ValueType<byte[]> {
+public class ZSTR extends CharArray implements ASCII, ValueType<String> {
 
 	public ZSTR(final int length) {
 		this(length, false);
@@ -56,13 +56,13 @@ public class ZSTR extends CharArray implements ASCII, ValueType<byte[]> {
 	}
 
 	@Override
-	public void set(byte[] value) {
-		this.put(value);
+	public void set(String value) {
+		this.put((value + NUL).getBytes(StandardCharsets.US_ASCII));
 	}
 
 	@Override
-	public byte[] get() {
-		return getBytes();
+	public String get() {
+		return toString();
 	}
 
 	@Override
